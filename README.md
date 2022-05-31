@@ -7,7 +7,7 @@ Potrzebne rzeczy:
 -wisielec
 	-stworzyć działający lokalnie program
 	-utworzenie wirtualnej klawiatury
-	-przygotować go do odczytu słów z bazy danych
+	-[przygotować go do odczytu słów z bazy danych]
 	-dodać funkcję bez powtórzeń kolejnych słów
 	-implementacja trybów rozgrywki PLFR, FRPL
 	-implementacja poziomów tródności
