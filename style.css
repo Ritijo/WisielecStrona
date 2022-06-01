@@ -1,0 +1,128 @@
+body
+{
+    background-color: rgb(49, 49, 49);
+    color: rgb(196, 196, 196);
+    font-size: 30px;
+}
+
+#container
+{
+    width: 908px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#gallows_image
+{
+    width: 450px;
+    min-height: 254px;
+    float: left;
+
+    border: 2px;
+    border-color: blue;
+    border-style: dotted;
+}
+
+#board
+{
+    width: 450px;
+    min-height: 254px;
+    float: left;
+    text-align: center;
+
+    border: 2px;
+    border-color: red;
+    border-style: dotted;
+}
+
+#word
+{
+    color: red;
+}
+
+#bottom_panel
+{
+    width: 900px;
+    border: 2px;
+    border-color: yellow;
+    border-style: dotted;
+    height: 100px;
+}
+
+#keyboard
+{
+    
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 2px;
+    border-color: green;
+    border-style: dotted;
+    height: 100px;
+}
+
+.keyboard_button
+{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid red;
+    border-radius: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.keyboard_button:hover
+{
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border-color: rgb(255, 136, 136);
+
+}
+
+.keyboard_button.guessed
+{
+    background-color: greenyellow;
+}
+
+.keyboard_button.not_guessed
+{
+    background-color: red;
+}
+
+.keyboard_button.loss
+{
+    background-color: red;
+}
+
+.keyboard_button.win
+{
+    background-color: green;
+}
+
+.keyboard_spacing_secound_row
+{
+    padding:10px;
+    float: left;
+}
+
+.keyboard_spacing_third_row
+{
+    padding: 20px;
+    float: left;
+}
+
+#gamemode
+{
+    float: left;
+}
+
+#difficulty
+{
+    margin-left: auto;
+    margin-right: auto;
+}

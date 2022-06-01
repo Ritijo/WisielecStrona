@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html> 
+<head>
+
+    <title>Wisielec</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta charset="utf-8">
+    <script src="hangman.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>Zagraj w wisielca i przetestuj swoją wiedzę!</h1>
+        <div id="mode_choice">
+            <p style="float: left;">Wybierz tryb:</p>
+            <select name="gamemode" id="gamemode">
+                <option value="">Z francuskiego na polski</option>
+                <option value="">Z polskiego na francuski</option>
+            </select>
+        </div>
+        <div style="clear:both ;"></div>
+
+        <div id="difficulty_mode">
+            <p style="float: left;">Wybierz poziom trudności</p>
+            <select name="difficulty" id="difficulty">
+                <option value="">Łatwy</option>
+                <option value="">Średni</option>
+                <option value="">Trudny</option>
+            </select>
+        </div>
+        <div style="clear: both;"></div>
+
+        <input type="button" value="Rozpocznij grę">
+        <div style="clear: both;"></div>
+
+        <div id="gallows_image">
+            <img src="gallows/s0.png" alt="no image">
+        </div>
+        <div id="board">
+            <p id="translation"></p>
+            <p id="password"></p>
+        </div>
+        <div style="clear:both ;"></div>
+        <div id="bottom_panel"><div id="keyboard"></div></div>
+        
+        
+    </div>
+
+</body>
+</html>
