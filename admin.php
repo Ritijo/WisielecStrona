@@ -8,12 +8,11 @@
 		die("Connection Failed:" . $connection->connect_error);
 	}
 
-	$word = $_POST['word'];
-	$jezyk = $_POST['jezyk'];
-	$trudnosc = $_POST['dif'];
-	$po = $_POST['wordafter'];
-	$sql = "INSERT INTO words (word, kraj, poziom, wordcorrect)
-	VALUES ('$word', '$jezyk', '$trudnosc', '$po')";
+	$PL = $_POST['PL'];
+	$FR = $_POST['FR'];
+	$LEVEL = $_POST['dif'];
+	$sql = "INSERT INTO words (PL, FR, LEVEL)
+	VALUES ('$PL', '$FR', '$LEVEL')";
 	mysqli_query($connect, $sql);
 	echo "udalo sie";
 ?>
