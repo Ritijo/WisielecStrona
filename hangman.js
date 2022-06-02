@@ -25,8 +25,6 @@ function show_words()
 
 window.onload = start;
 
-
-
 var polish_letters = new Array(35);
 
 polish_letters[0] = "Q";
