@@ -447,3 +447,13 @@ tr td:last-child {
         grid-template-columns: 100%;
     }
 }
+
+.card-single1 {
+    align-items: center;
+    padding-left: 3.5rem;
+}
+
+.card-body {
+    overflow-y: scroll;
+    height: 280px;
+}
