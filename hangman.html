@@ -15,14 +15,15 @@
         xhr.open("Post", "getworld.php");
         xhr.onload = function() {
             var jsvar = this.response;
-            function kupa()
-            {
-                document.getElementById("gowno").innerHTML = jsvar;
-            }
+
             jsvar = JSON.parse(jsvar);
            
         }
         xhr.send();
+        function kupa()
+            {
+                document.getElementById("gowno").innerHTML = jsvar;
+            }
     </script>
 
 </head>
