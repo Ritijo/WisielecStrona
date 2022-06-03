@@ -15,21 +15,14 @@ bar.onload = function() {
 }
 bar.send();
 
-xhr=xhr.toString()
-String(xhr)
-
-bar=bar.toString()
-String(bar)
-
-
 var password = "Le Coffre";
 var translation = "Skrzynia";
 
 function pdmiana()
 {
-    password = xhr
+    password = jsvar
 
-    translation = bar
+    translation = jsvar
 }
 
 var mistake_count = 0;
