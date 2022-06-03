@@ -1,21 +1,6 @@
 
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
 
-var xhr = new XMLHttpRequest ();
-xhr.open("POST", "getword.php");
-xhr.onload = function() {
-    var jsvar = this.response;
-    document.getElementById("translation").innerHTML = (jsvar);
-}
-xhr.send();
-
-var bar = new XMLHttpRequest ();
-bar.open("POST", "password.php");
-bar.onload = function() {
-    var jsvar = this.response;
-    document.getElementById("translation").innerHTML = (jsvar);
-}
-bar.send();
 
 var password = xhr;
 var translation = bar;
@@ -171,6 +156,22 @@ function polish_keyboard()
 
 function start()
 {
+    var xhr = new XMLHttpRequest ();
+xhr.open("POST", "getword.php");
+xhr.onload = function() {
+    var jsvar = this.response;
+    document.getElementById("translation").innerHTML = (jsvar);
+}
+xhr.send();
+
+var bar = new XMLHttpRequest ();
+bar.open("POST", "password.php");
+bar.onload = function() {
+    var jsvar = this.response;
+    document.getElementById("translation").innerHTML = (jsvar);
+}
+bar.send();
+
     polish_keyboard();
 }
 
