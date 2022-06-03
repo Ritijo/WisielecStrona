@@ -33,6 +33,7 @@ for (i=0; i<password_length; i++)
 {
     if(password.charAt(i) == " ") hiddenpassword += " ";
     else hiddenpassword += "-";
+    console.log(hiddenpassword)
 }
 
 function show_words()
