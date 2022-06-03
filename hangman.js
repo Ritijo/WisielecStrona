@@ -182,6 +182,7 @@ function check(nr)
     {
         var element = "letter" + nr;
         document.getElementById(element).className="keyboard_button guessed";
+        document.getElementById(element).setAttribute("onclick",";");
 
         show_words();
     }
@@ -194,7 +195,7 @@ function check(nr)
 
         var image_number = "Gallows/s" + mistake_count + ".png";
         document.getElementById("gallows_image").innerHTML = '<img src="'+image_number+'" alt="" />';
-        document.getElementById(element).setAttribute("onclick",";")
+        document.getElementById(element).setAttribute("onclick",";");
     }
     
     //Win
@@ -205,6 +206,7 @@ function check(nr)
         {
             var element = "letter" + i;
             document.getElementById(element).className="keyboard_button win";
+            document.getElementById(element).setAttribute("onclick",";");
         }
     }
 
@@ -216,6 +218,7 @@ function check(nr)
         {
             var element = "letter" + i;
             document.getElementById(element).className="keyboard_button loss";
+            document.getElementById(element).setAttribute("onclick",";");
         }
     }
 }

@@ -2,7 +2,9 @@ body
 {
     background-color: rgb(49, 49, 49);
     color: rgb(196, 196, 196);
-    font-size: 30px;
+    font-size: 20px;
+    font-family: 'Lato';
+    text-align: center;
 }
 
 #container
@@ -11,6 +13,50 @@ body
     margin-left: auto;
     margin-right: auto;
     
+}
+
+#mode_choice
+{
+    margin-top: 60px;
+}
+
+select[name="gamemode"]
+{
+    background-color: yellow !important;
+    border: 1px solid #ccc;
+}
+
+#gamemode
+{
+
+}
+
+#difficulty_mode
+{
+    margin-top: 30px;
+}
+
+#difficulty
+{
+    
+}
+
+#start_button
+{
+    margin-top: 30px;
+}
+
+#score_preview
+{
+    width: 300px;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+#score
+{
+    margin-left: 1px;
+    border: 1px white dotted;
 }
 
 #gallows_image
@@ -36,6 +82,16 @@ body
     border-style: dotted;
 }
 
+#translation
+{
+    margin-top: 60px;
+}
+
+#password
+{
+    margin-top: 60px;
+}
+
 #word
 {
     color: red;
@@ -44,38 +100,53 @@ body
 #bottom_panel
 {
     width: 900px;
+    /*
     border: 2px;
     border-color: yellow;
     border-style: dotted;
-    height: 100px;
+    height: 100px;*/
 }
-
-
 
 #keyboard
 {
     
-    width: 900px;
+    width: 668px;
     margin-left: auto;
     margin-right: auto;
-
-    border: 2px;
-    border-color: green;
-    border-style: dotted;
     height: 100px;
+
+    /*border: 2px;
+    border-color: green;
+    border-style: dotted;*/
+}
+
+.polish_keyboard
+{
+    width: 668px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.french_keyboard
+{
+    width: 797px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .keyboard_button
 {
     width: 30px;
-    height: 30px;
-    text-align: center;
-    padding: 5px;
-    margin: 5px;
-    border: 2px solid red;
-    border-radius: 10px;
+	height: 30px;
+	text-align:center;
+	padding: 5px;
+	margin: 4px;
+    border: 3px solid red;
+    border-radius: 15px;
     float: left;
     cursor: pointer;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 28px;
 }
 
 .keyboard_button:hover
@@ -118,13 +189,3 @@ body
     float: left;
 }
 
-#gamemode
-{
-    float: left;
-}
-
-#difficulty
-{
-    margin-left: auto;
-    margin-right: auto;
-}
