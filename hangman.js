@@ -17,8 +17,8 @@ bar.onload = function() {
 }
 bar.send();
 
-var password = "";
-var translation = "";
+var password = xhr;
+var translation = bar;
 
 
 var mistake_count = 0;
