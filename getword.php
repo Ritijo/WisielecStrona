@@ -36,10 +36,14 @@
 	{
 		$row=mysqli_fetch_array($res);
 		
-			echo $row[PL]."</BR>";
-		
-			echo $row[FR];
-		
+			$array=array(
+			PL=>$row[PL],
+			FR=>$row[FR]
+			);
+			
+			//echo $row[PL]."</BR>";
+			//echo $row[FR];
+			echo $array;
 	}
 	
 
