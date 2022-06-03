@@ -9,9 +9,16 @@ xhr.onload = function() {
 }
 xhr.send();
 
+var bar = new XMLHttpRequest ();
+bar.open("POST", "password.php");
+bar.onload = function() {
+    var jsvar = this.response;
+    document.getElementById("translation").innerHTML = (jsvar);
+}
+bar.send();
 
-var password = "LALALAL";
-var translation = "dadada";
+var password = xhr;
+var translation = bar;
 
 
 var mistake_count = 0;
