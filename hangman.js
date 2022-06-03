@@ -19,7 +19,7 @@ console.log(bar);
 
 var password = xhr;
 var translation = bar;
-var dupa = JSON.parse(bar.responseText);
+var dupa = JSON.parse(bar.response);
 console.log(dupa);
 var mistake_count = 0;
 
