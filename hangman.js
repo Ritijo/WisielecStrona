@@ -1,12 +1,14 @@
 
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
+
 var xhr = new XMLHttpRequest ();
 xhr.open("POST", "getworld.php");
-xhr.onload = function() {
+function BIGDICK() {
     var jsvar = this.response;
     document.getElementById("translation").innerHTML = (jsvar);
 }
 xhr.send();
+
 var password = jsvar;
 var translation = xhr;
 
@@ -160,6 +162,7 @@ function polish_keyboard()
 
 function start()
 {
+    BIGDICK();
     polish_keyboard();
 }
 
