@@ -43,9 +43,8 @@
 			
 			//echo $row[PL]."</BR>";
 			//echo $row[FR];
-			echo $array;
+			echo json_encode($row[PL]);
 	}
-	
 
 
 

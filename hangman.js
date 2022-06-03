@@ -1,6 +1,5 @@
 
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
-var jsvar = "aaaa";
 var xhr = new XMLHttpRequest ();
 xhr.open("POST", "getword.php");
 xhr.onload = function() {
@@ -8,23 +7,21 @@ xhr.onload = function() {
 }
 xhr.send();
 
-var jsvar2 = "bbbb";
 var bar = new XMLHttpRequest ();
 bar.open("POST", "password.php");
 bar.onload = function() {
-    var jsvar2 = this.response;
+    var jsvar = this.response;
 }
 bar.send();
 
 var password = "Le Coffre";
 var translation = "Skrzynia";
 
-function pdmiana()
-{
-    password = jsvar;
+var row = new XMLHttpRequest();
+row.open("Get","test.php", true);
+row.send();
 
-    translation = jsvar2;
-}
+console.log(row);
 
 var mistake_count = 0;
 
@@ -177,7 +174,7 @@ function polish_keyboard()
 function start()
 {
     polish_keyboard();
-    pdmiana();
+    
 }
 
 String.prototype.setCharacter = function(position, character)
