@@ -12,10 +12,10 @@
 
     <script type="text/javascript">
         var xhr = new XMLHttpRequest ();
-        xhr.open("POST", "test.php");
+        xhr.open("POST ", "test.php");
         xhr.onload = function() {
             var jsvar = this.response;
-            console.log(jsvar);
+            document.getElementById("t").innerHTML = (jsvar);
         }
         xhr.send();
     </script>
@@ -26,7 +26,7 @@
 
     <div id="container">
 
-        <div id="gowno"></div>
+        <p id="t"></p>
         <h1>Zagraj w wisielca i przetestuj swoją wiedzę!</h1>
 
         <p>Pytania nagrania wywiady jak to jest że kiedyś nie miałeś
