@@ -34,16 +34,14 @@
 	 
 	if(mysqli_num_rows($res)>0)
 	{
-		echo "Twoj wynik: </br>";
+	
 		$row=mysqli_fetch_array($res);
 		
-			echo $row[PL]."</BR>";
+			echo $row[PL];
 		
-			echo $row[FR];
+		
 		
 	}
-	
-
-
+	 
 
 ?>
