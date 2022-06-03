@@ -11,8 +11,8 @@ Potrzebne rzeczy:
 	-dodać funkcję bez powtórzeń kolejnych słów
 	-implementacja trybów rozgrywki PLFR, FRPL
 	-implementacja poziomów tródności
-	-funkcja zamieniająca hasło z tłumaczeniem i klawiaturę w zaleznosci od trybu gry
-	-funkcja rozpoczynająca gre po naciśnięciu przycisku "rozpocznij grę"
+	-$funkcja zamieniająca hasło z tłumaczeniem i klawiaturę w zaleznosci od trybu gry
+	-$funkcja rozpoczynająca gre po naciśnięciu przycisku "rozpocznij grę"
 	-funkcja przesyłająca dane o rozgrywce
 -tabela wyników
 	-odczytanie z bazy danych
