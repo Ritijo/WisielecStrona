@@ -183,6 +183,7 @@ function polish_keyboard()
 function start()
 {
     polish_keyboard();
+    pdmiana();
 }
 
 String.prototype.setCharacter = function(position, character)
