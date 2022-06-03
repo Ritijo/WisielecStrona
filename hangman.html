@@ -10,13 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <script src="hangman.js" type="text/javascript"></script>
 
+    <script type="text/javascript">
+        var xhr = new XMLHttpRequest ();
+        xhr.open("POST", "test.php");
+        xhr.onload = function() {
+            var jsvar = this.response;
+            document.getElementById("t").innerHTML = (jsvar);
+        }
+        xhr.send();
+    </script>
+
 </head>
 
 <body>
 
     <div id="container">
 
-
+        <p id="t"></p>
         <h1>Zagraj w wisielca i przetestuj swoją wiedzę!</h1>
 
         <p>Pytania nagrania wywiady jak to jest że kiedyś nie miałeś
