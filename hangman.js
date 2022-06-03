@@ -5,7 +5,6 @@ var xhr = new XMLHttpRequest ();
 xhr.open("POST", "getword.php");
 xhr.onload = function() {
     var jsvar = this.response;
-    document.getElementById("password").innerHTML = (jsvar);
 }
 xhr.send();
 
@@ -13,7 +12,6 @@ var bar = new XMLHttpRequest ();
 bar.open("POST", "password.php");
 bar.onload = function() {
     var jsvar = this.response;
-    document.getElementById("translation").innerHTML = (jsvar);
 }
 bar.send();
 
