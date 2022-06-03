@@ -18,7 +18,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href=""><span class="las la-igloo"></span>
+                    <a href="index.html"><span class="las la-igloo"></span>
                     <span>Panel</span></a>
                 </li>
 
@@ -28,7 +28,7 @@
                 </li>
 
                 <li>
-                    <a href=""  class="active"><span class="las la-clipboard-list"></span>
+                    <a href="dodawanieslow.html"  class="active"><span class="las la-clipboard-list"></span>
                     <span>Dodawanie słów</span></a>
                 </li>
             </ul>
@@ -45,7 +45,7 @@
             </h2>
             <div class="search-wrapper">
                 <span class="las la-search"></span>
-                <input type="search" placeholder="Search here" />
+                <input type="search" placeholder="Szukaj tu" />
             </div>
 
             <div class="user-wrapper">
@@ -56,3 +56,21 @@
                 </div>
             </div>
         </header>
+    <main>
+<div class="gora">
+        <form class="doda" action="admin.php" method="POST">
+            <label class="dodajslowo"><h2>Dodaj Słowo</h2></label>
+            <label > Polski</label>
+            <br>
+            <input class="pole" type="text" placeholder="Słowo po polsku" name="PL" /></br>
+            <label > Francuski</label>
+            <br>
+            <input class="pole" type="text" placeholder="Słowo po francusku" name="FR" /></br>
+            <label > Poziom Trudnosci</label>
+            <br>
+            <input class="pole" type="number" min="1" max="3" value="1" name="dif" /></br>
+            
+            <input class="box" type="submit" value="Dodaj słowo"/>
+            </form>
+</div>
+    </main>

@@ -18,7 +18,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active"><span class="las la-igloo"></span>
+                    <a href="index.php" class="active"><span class="las la-igloo"></span>
                     <span>Panel</span></a>
                 </li>
 
