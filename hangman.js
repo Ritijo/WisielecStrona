@@ -9,13 +9,10 @@ xhr.onload = function() {
 }
 xhr.send();
 
-<<<<<<< HEAD
-var password = xhr;
-var translation = xhr;
-=======
+
 var password = "LALALAL";
 var translation = "dadada";
->>>>>>> parent of b076cfc (Update hangman.js)
+
 
 var mistake_count = 0;
 
