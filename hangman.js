@@ -15,8 +15,10 @@ bar.onload = function() {
 }
 bar.send();
 
-var password = "Le Coffre";
-var translation = "Skrzynia";
+console.log(bar);
+
+var password = xhr;
+var translation = bar;
 
 var mistake_count = 0;
 
