@@ -143,10 +143,10 @@ select::-ms-expand
 
 #keyboard
 {
-    width: 668px;
+    position: relative;
+    min-height: 100px;
     margin-left: auto;
     margin-right: auto;
-    height: 100px;
 }
 
 .polish_keyboard
