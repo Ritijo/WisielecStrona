@@ -3,14 +3,14 @@
 
 var xhr = new XMLHttpRequest ();
 xhr.open("POST", "getworld.php");
-function BIGDICK() {
+xhr.onload = function() {
     var jsvar = this.response;
     document.getElementById("translation").innerHTML = (jsvar);
 }
 xhr.send();
 
-var password = jsvar;
-var translation = xhr;
+var password = "LALALAL";
+var translation = "dadada";
 
 var mistake_count = 0;
 
@@ -162,7 +162,6 @@ function polish_keyboard()
 
 function start()
 {
-    BIGDICK();
     polish_keyboard();
 }
 
