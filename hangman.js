@@ -9,16 +9,8 @@ xhr.onload = function() {
 }
 xhr.send();
 
-var bar = new XMLHttpRequest ();
-bar.open("POST", "getword.php");
-bar.onload = function() {
-    var jsvar = this.response;
-    document.getElementById("translation").innerHTML = (jsvar);
-}
-bar.send();
-
 var password = xhr;
-var translation = bar;
+var translation = xhr;
 
 var mistake_count = 0;
 
