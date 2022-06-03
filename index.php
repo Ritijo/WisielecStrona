@@ -28,7 +28,7 @@
                 </li>
 
                 <li>
-                    <a href=""><span class="las la-clipboard-list"></span>
+                    <a href="dodawanieslow.html"><span class="las la-clipboard-list"></span>
                     <span>Dodawanie słów</span></a>
                 </li>
             </ul>
