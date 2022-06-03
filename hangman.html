@@ -12,23 +12,17 @@
 
     <script type="text/javascript">
         var xhr = new XMLHttpRequest ();
-        xhr.open("Post", "getworld.php");
+        xhr.open("POST", "test.php");
         xhr.onload = function() {
             var jsvar = this.response;
-
-            jsvar = JSON.parse(jsvar);
-           
+            console.log(jsvar);
         }
         xhr.send();
-        function kupa()
-            {
-                document.getElementById("gowno").innerHTML = jsvar;
-            }
     </script>
 
 </head>
 
-<body onload="kupa()">
+<body>
 
     <div id="container">
 
