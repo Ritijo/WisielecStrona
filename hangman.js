@@ -1,6 +1,6 @@
 
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
-
+var jsvar = "aaaa";
 var xhr = new XMLHttpRequest ();
 xhr.open("POST", "getword.php");
 xhr.onload = function() {
@@ -8,10 +8,11 @@ xhr.onload = function() {
 }
 xhr.send();
 
+var jsvar2 = "bbbb";
 var bar = new XMLHttpRequest ();
 bar.open("POST", "password.php");
 bar.onload = function() {
-    var jsvar = this.response;
+    var jsvar2 = this.response;
 }
 bar.send();
 
@@ -20,9 +21,9 @@ var translation = "Skrzynia";
 
 function pdmiana()
 {
-    password = jsvar
+    password = jsvar;
 
-    translation = jsvar
+    translation = jsvar2;
 }
 
 var mistake_count = 0;
