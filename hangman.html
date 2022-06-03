@@ -12,10 +12,11 @@
 
     <script type="text/javascript">
         var xhr = new XMLHttpRequest ();
-        xhr.open("POST", "test.php");
+        xhr.open("POST", "getworld.php");
         xhr.onload = function() {
             var jsvar = this.response;
-            document.getElementById("t").innerHTML = (jsvar);
+            document.getElementById("translation").innerHTML = (jsvar);
+            document.getElementById("password").innerHTML = (jsvar);
         }
         xhr.send();
     </script>
@@ -26,7 +27,7 @@
 
     <div id="container">
 
-        <p id="t"></p>
+        
         <h1>Zagraj w wisielca i przetestuj swoją wiedzę!</h1>
 
         <p>Pytania nagrania wywiady jak to jest że kiedyś nie miałeś
