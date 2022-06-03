@@ -22,7 +22,8 @@ var translation = bar;
 
 var mistake_count = 0;
 
-
+password = password.toUpperCase();
+translation = translation.toUpperCase();
 
 var password_length = password.length;
 var hiddenpassword = "";
