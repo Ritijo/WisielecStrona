@@ -36,7 +36,9 @@
 
         <div id="mode_choice">
             <p>Wybierz tryb: 
-                <select name="gamemode" id="gamemode">
+                <select name="gamemode" id="gamemode" class="select">
+                    <option value="">none</option>
+                    <span class="focus"></span>
                     <option value="">Z francuskiego na polski</option>
                     <option value="">Z polskiego na francuski</option>
                 </select>
@@ -47,7 +49,9 @@
 
         <div id="difficulty_mode">
             <p>Wybierz poziom trudności
-                <select name="difficulty" id="difficulty">
+                <select name="difficulty" id="difficulty" class="select">
+                    <option value="">none</option>
+                    <span class="focus"></span>
                     <option value="">Łatwy</option>
                     <option value="">Średni</option>
                     <option value="">Trudny</option>
@@ -56,14 +60,12 @@
         </div>
 
 
-        <input type="button" value="Rozpocznij grę" id="start_button">
+        <input type="button" value="Rozpocznij grę" id="start_button" class="btn">
 
 
         <div id="score_preview">
-            <div style="float: left;">Twoj obecny wynik to:</div>
-            <div id="score">Sureddo</div>
+            <p>Twoj obecny wynik to: <span id="score">Sureddo</span></p>  
         </div>
-        <div style="clear:both ;"></div>
 
 
         <div id="gallows_image">

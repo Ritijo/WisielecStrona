@@ -1,10 +1,54 @@
+:root 
+{
+    --select-border: rgb(19, 19, 19);
+    --select-focus: rgb(255, 0, 0);
+    --select-arrow: var(--select-border);
+}
+
 body
 {
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(255, 255, 255);
     color: rgb(24, 24, 24);
     font-size: 22px;
     font-family: 'Lato';
     text-align: center;
+}
+
+select 
+{
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+}
+
+select::-ms-expand 
+{
+    display: none;
+}
+
+.select 
+{
+    width: 100%;
+    min-width: 115px;
+    max-width: fit-content;
+    border: 3px solid var(--select-border);
+    border-radius: 15px;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.3;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+    text-align: center;
+    position: relative;
 }
 
 .center
@@ -14,10 +58,9 @@ body
 
 #container
 {
-    width: 908px; 
+    width: 900px; 
     margin-left: auto;
     margin-right: auto;
-    
 }
 
 #mode_choice
@@ -26,33 +69,32 @@ body
     margin-top: 60px;
 }
 
-select[name="gamemode"]
-{
-    background-color: yellow !important;
-    border: 1px solid #ccc;
-}
-
-#gamemode
-{
-
-}
-
 #difficulty_mode
 {
     text-align: center;
     margin-top: 30px;
 }
 
-#difficulty
-{
-    
-}
-
 #start_button
 {
-
     margin: auto;
     margin-top: 30px;
+}
+
+.btn
+{
+    border: 3px solid var(--select-border);
+    border-radius: 15px;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+}
+.btn:hover
+{
+    background-color: rgb(58, 58, 58);
+    color: rgb(255, 255, 255);
+    border-color: rgb(58, 58, 58);
 }
 
 #score_preview
@@ -62,21 +104,11 @@ select[name="gamemode"]
     margin-left: 40px;
 }
 
-#score
-{
-
-}
-
 #gallows_image
 {
     width: 450px;
     min-height: 254px;
     float: left;
-    /*
-    border: 2px;
-    border-color: blue;
-    border-style: dotted;
-    */
 }
 
 #board
@@ -86,11 +118,6 @@ select[name="gamemode"]
     float: left;
     text-align: center;
     margin-top: 20px;
-    /*
-    border: 2px;
-    border-color: red;
-    border-style: dotted;
-    */
 }
 
 #translation
@@ -109,32 +136,17 @@ select[name="gamemode"]
     font-weight: 800;
 }
 
-#word
-{
-    color: red;
-}
-
 #bottom_panel
 {
     width: 900px;
-    /*
-    border: 2px;
-    border-color: yellow;
-    border-style: dotted;
-    height: 100px;*/
 }
 
 #keyboard
 {
-    
     width: 668px;
     margin-left: auto;
     margin-right: auto;
     height: 100px;
-
-    /*border: 2px;
-    border-color: green;
-    border-style: dotted;*/
 }
 
 .polish_keyboard
@@ -158,7 +170,7 @@ select[name="gamemode"]
 	text-align:center;
 	padding: 5px;
 	margin: 4px;
-    border: 3px solid rgb(19, 19, 19);
+    border: 3px solid var(--select-border);
     border-radius: 15px;
     float: left;
     cursor: pointer;
@@ -170,9 +182,8 @@ select[name="gamemode"]
 .keyboard_button:hover
 {
     background-color: rgb(58, 58, 58);
-    color: white;
+    color: rgb(255, 255, 255);
     border-color: rgb(58, 58, 58);
-
 }
 
 .keyboard_button.guessed
@@ -182,12 +193,12 @@ select[name="gamemode"]
 
 .keyboard_button.not_guessed
 {
-    background-color: red;
+    background-color: rgb(255, 32, 32);
 }
 
 .keyboard_button.loss
 {
-    background-color: red;
+    background-color: rgb(255, 32, 32);
 }
 
 .keyboard_button.win
