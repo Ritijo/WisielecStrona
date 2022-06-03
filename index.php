@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
         <input type="checkbox" id="nav-toggle">
         <div class="sidebar">
             <div class="sidebar-brand">
@@ -19,7 +18,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active"><span class="las la-igloo"></span>
+                    <a href="index.php" class="active"><span class="las la-igloo"></span>
                     <span>Panel</span></a>
                 </li>
 
@@ -61,8 +60,7 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>
-							<?php
+                        <h1><?php
 
 								$host = "localhost";
 								$user = "www2010_root";
@@ -88,8 +86,7 @@
 										echo $row[SUMA];
 									}
 								}
-							?>
-						</h1>
+							?></h1>
                         <span>Uczniowie</span>
                     </div>
                     <div>
@@ -99,8 +96,7 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>
-							<?php
+                        <h1><?php
 
 								$host = "localhost";
 								$user = "www2010_root";
@@ -126,8 +122,7 @@
 										echo $row[SUMA];
 									}
 								}
-							?>
-						</h1>
+							?></h1>
                         <span>Nauczyciele</span>
                     </div>
                     <div>
@@ -137,8 +132,7 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>
-							<?php
+                        <h1><?php
 
 								$host = "localhost";
 								$user = "www2010_root";
@@ -163,8 +157,7 @@
 										echo $row[SUMA];
 									}
 								}
-							?>
-						</h1>
+							?></h1>
                         <span>Słowa</span>
                     </div>
                     <div>
@@ -172,13 +165,9 @@
                     </div>
                 </div>
 
-                <div class="card-single">
+                <div class="card-single1">
                     <div>
-                        <h1>10</h1>
-                        <span>test</span>
-                    </div>
-                    <div>
-                        <span class="las la-users"></span>
+                        <img src="flaga.svg.png" alt="">
                     </div>
                 </div>
             </div>
@@ -193,88 +182,55 @@
                 <div class="customers">
                     <div class="card">
                         <div class="card-header">
-                            <h3>New customer</h3>
-                             <button>See all<span class="las la-arrow-right">
+                            <h3>Uczniowie</h3>
+                             <h3>Wynik </h3>
                             </span></button>
                         </div>
                         <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="kizoija.jpg" width="40px"
-                                    height="40px" alt="">
-                                    <div>
-                                        <h4>Pan Paweł</h4>
-                                        <small>CEO Excerpt</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="las la-user-circle"></span>
-                                    <span class="las la-comment"></span>
-                                    <span class="las la-phone"></span>
-                                </div>
-                            </div>
-                            
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="kizoija.jpg" width="40px"
-                                    height="40px" alt="">
-                                    <div>
-                                        <h4>Pan Paweł</h4>
-                                        <small>CEO Excerpt</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="las la-user-circle"></span>
-                                    <span class="las la-comment"></span>
-                                    <span class="las la-phone"></span>
-                                </div>
-                            </div>
+						<?php
 
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="kizoija.jpg" width="40px"
-                                    height="40px" alt="">
-                                    <div>
-                                        <h4>Pan Paweł</h4>
-                                        <small>CEO Excerpt</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="las la-user-circle"></span>
-                                    <span class="las la-comment"></span>
-                                    <span class="las la-phone"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="kizoija.jpg" width="40px"
-                                    height="40px" alt="">
-                                    <div>
-                                        <h4>Pan Paweł</h4>
-                                        <small>CEO Excerpt</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="las la-user-circle"></span>
-                                    <span class="las la-comment"></span>
-                                    <span class="las la-phone"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="kizoija.jpg" width="40px"
-                                    height="40px" alt="">
-                                    <div>
-                                        <h4>Pan Paweł</h4>
-                                        <small>CEO Excerpt</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="las la-user-circle"></span>
-                                    <span class="las la-comment"></span>
-                                    <span class="las la-phone"></span>
-                                </div>
-                            </div>
+								$host = "localhost";
+								$user = "www2010_root";
+								$pass = "qwerty123";
+								$name = "www2010_wisielec";
+								
+								$connect = @new mysqli($host, $user, $pass, $name);
+	
+								if($connect->connect_error)
+								{
+									die("Connection Failed:" . $connection->connect_error);
+								}
+								
+								$get_pleyers ="SELECT SUM(PL_CORRECT + FR_CORRECT) as SCORE_TOTAL, name, email FROM players, Scores
+								WHERE players.ID = Scores.ID_PLAYER
+								GROUP by name;";
+								
+								$res = mysqli_query($connect, $get_pleyers);
+								
+								if(mysqli_num_rows($res)>0)
+								{
+									while($row=mysqli_fetch_array($res))
+									{
+										echo '<div class="customer">';
+										
+										echo '<div class="info">';
+										echo ' <img src="kizoija.jpg" width="40px"
+                                    height="40px" alt="">';
+										echo "<h4>".$row[name]."</h4>";
+										echo "</div>";
+										echo '<div class="contact">';
+										echo  $row[SCORE_TOTAL];
+										echo "</div>";
+										echo "</div>";
+									}
+								}
+							?>
+							
+                            
+                            
+                            
+
+                            
 
 
                         </div>

@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
         <input type="checkbox" id="nav-toggle">
         <div class="sidebar">
             <div class="sidebar-brand">
@@ -18,7 +19,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.html" class="active"><span class="las la-igloo"></span>
+                    <a href="" class="active"><span class="las la-igloo"></span>
                     <span>Panel</span></a>
                 </li>
 
@@ -28,7 +29,7 @@
                 </li>
 
                 <li>
-                    <a href="dodawanieslow.html"><span class="las la-clipboard-list"></span>
+                    <a href=""><span class="las la-clipboard-list"></span>
                     <span>Dodawanie słów</span></a>
                 </li>
             </ul>
@@ -44,7 +45,7 @@
             </h2>
             <div class="search-wrapper">
                 <span class="las la-search"></span>
-                <input type="search" placeholder="Szukaj tu" />
+                <input type="search" placeholder="Search here" />
             </div>
 
             <div class="user-wrapper">
@@ -60,7 +61,35 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>67</h1>
+                        <h1>
+							<?php
+
+								$host = "localhost";
+								$user = "www2010_root";
+								$pass = "qwerty123";
+								$name = "www2010_wisielec";
+								
+								$connect = @new mysqli($host, $user, $pass, $name);
+	
+								if($connect->connect_error)
+								{
+									die("Connection Failed:" . $connection->connect_error);
+								}
+								
+								$get_pleyers ="SELECT count(ID) AS SUMA FROM players
+								WHERE ROLE='Uczen';";
+								
+								$res = mysqli_query($connect, $get_pleyers);
+								
+								if(mysqli_num_rows($res)>0)
+								{
+									while($row=mysqli_fetch_array($res))
+									{
+										echo $row[SUMA];
+									}
+								}
+							?>
+						</h1>
                         <span>Uczniowie</span>
                     </div>
                     <div>
@@ -70,7 +99,35 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>69</h1>
+                        <h1>
+							<?php
+
+								$host = "localhost";
+								$user = "www2010_root";
+								$pass = "qwerty123";
+								$name = "www2010_wisielec";
+								
+								$connect = @new mysqli($host, $user, $pass, $name);
+	
+								if($connect->connect_error)
+								{
+									die("Connection Failed:" . $connection->connect_error);
+								}
+								
+								$get_pleyers ="SELECT count(ID) AS SUMA FROM players
+								WHERE ROLE='Nauczyciel';";
+								
+								$res = mysqli_query($connect, $get_pleyers);
+								
+								if(mysqli_num_rows($res)>0)
+								{
+									while($row=mysqli_fetch_array($res))
+									{
+										echo $row[SUMA];
+									}
+								}
+							?>
+						</h1>
                         <span>Nauczyciele</span>
                     </div>
                     <div>
@@ -80,7 +137,34 @@
 
                 <div class="card-single">
                     <div>
-                        <h1>1</h1>
+                        <h1>
+							<?php
+
+								$host = "localhost";
+								$user = "www2010_root";
+								$pass = "qwerty123";
+								$name = "www2010_wisielec";
+								
+								$connect = @new mysqli($host, $user, $pass, $name);
+	
+								if($connect->connect_error)
+								{
+									die("Connection Failed:" . $connection->connect_error);
+								}
+								
+								$get_pleyers ="SELECT count(ID) AS SUMA FROM words;";
+								
+								$res = mysqli_query($connect, $get_pleyers);
+								
+								if(mysqli_num_rows($res)>0)
+								{
+									while($row=mysqli_fetch_array($res))
+									{
+										echo $row[SUMA];
+									}
+								}
+							?>
+						</h1>
                         <span>Słowa</span>
                     </div>
                     <div>
@@ -88,9 +172,13 @@
                     </div>
                 </div>
 
-                <div class="card-single1">
+                <div class="card-single">
                     <div>
-                        <img src="flaga.svg.png" alt="">
+                        <h1>10</h1>
+                        <span>test</span>
+                    </div>
+                    <div>
+                        <span class="las la-users"></span>
                     </div>
                 </div>
             </div>
@@ -105,8 +193,8 @@
                 <div class="customers">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Uczniowie</h3>
-                             <h3>Wynik </h3>
+                            <h3>New customer</h3>
+                             <button>See all<span class="las la-arrow-right">
                             </span></button>
                         </div>
                         <div class="card-body">
@@ -115,12 +203,14 @@
                                     <img src="kizoija.jpg" width="40px"
                                     height="40px" alt="">
                                     <div>
-                                        <h4>Michał Konkol</h4>
-                                        <small>Klasa B</small>
+                                        <h4>Pan Paweł</h4>
+                                        <small>CEO Excerpt</small>
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    Tu wynik
+                                    <span class="las la-user-circle"></span>
+                                    <span class="las la-comment"></span>
+                                    <span class="las la-phone"></span>
                                 </div>
                             </div>
                             
@@ -130,11 +220,13 @@
                                     height="40px" alt="">
                                     <div>
                                         <h4>Pan Paweł</h4>
-                                        <small>Klasa C</small>
+                                        <small>CEO Excerpt</small>
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    Tu wynik
+                                    <span class="las la-user-circle"></span>
+                                    <span class="las la-comment"></span>
+                                    <span class="las la-phone"></span>
                                 </div>
                             </div>
 
@@ -144,11 +236,13 @@
                                     height="40px" alt="">
                                     <div>
                                         <h4>Pan Paweł</h4>
-                                        <small>Klasa A</small>
+                                        <small>CEO Excerpt</small>
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    Tu wynik
+                                    <span class="las la-user-circle"></span>
+                                    <span class="las la-comment"></span>
+                                    <span class="las la-phone"></span>
                                 </div>
                             </div>
                             <div class="customer">
@@ -157,11 +251,13 @@
                                     height="40px" alt="">
                                     <div>
                                         <h4>Pan Paweł</h4>
-                                        <small>Klasa D</small>
+                                        <small>CEO Excerpt</small>
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    Tu wynik
+                                    <span class="las la-user-circle"></span>
+                                    <span class="las la-comment"></span>
+                                    <span class="las la-phone"></span>
                                 </div>
                             </div>
                             <div class="customer">
@@ -170,57 +266,15 @@
                                     height="40px" alt="">
                                     <div>
                                         <h4>Pan Paweł</h4>
-                                        <small>Klasa E</small>
+                                        <small>CEO Excerpt</small>
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    Tu wynik
+                                    <span class="las la-user-circle"></span>
+                                    <span class="las la-comment"></span>
+                                    <span class="las la-phone"></span>
                                 </div>
                             </div>
-
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="kizoija.jpg" width="40px"
-                                    height="40px" alt="">
-                                    <div>
-                                        <h4>Pan Paweł</h4>
-                                        <small>Klasa A</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    Tu wynik
-                                </div>
-                            </div>
-
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="kizoija.jpg" width="40px"
-                                    height="40px" alt="">
-                                    <div>
-                                        <h4>Pan Paweł</h4>
-                                        <small>Klasa A</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    Tu wynik
-                                </div>
-                            </div>
-
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="kizoija.jpg" width="40px"
-                                    height="40px" alt="">
-                                    <div>
-                                        <h4>Pan Paweł</h4>
-                                        <small>Klasa A</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    Tu wynik
-                                </div>
-                            </div>
-
-                            
 
 
                         </div>

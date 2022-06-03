@@ -457,3 +457,70 @@ tr td:last-child {
     overflow-y: scroll;
     height: 280px;
 }
+
+.doda {
+    background: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    background: var(--main-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid var(--main-color);
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    
+}
+
+.dodajslowo {
+    padding: 1rem;
+    text-align: center;
+    width: auto;
+    align-items: center;
+}
+
+.gora {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: 30%;
+    text-align: center;
+    font-size: large;
+    width: 100%;
+    margin: 0;
+    padding-right: 35%;
+}
+
+.box {
+    padding: 10px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: large;
+    font-family: 'Poppins', sans-serif;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+
+}
+
+.box:hover {
+    background: #2f2f30;
+    transition: 100ms;
+    color: #fff;
+}
+
+.pole {
+    height: 130%;
+    text-align: center;
+    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+}
