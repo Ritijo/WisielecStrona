@@ -34,17 +34,17 @@
 	 
 	if(mysqli_num_rows($res)>0)
 	{
-		echo "Twoj wynik: </br>";
+		//echo "Twoj wynik: </br>";
 		$row=mysqli_fetch_array($res);
 		
-			$array=array(
-			PL=>$row[PL],
-			FR=>$row[FR]
-			);
+			//$array=array(
+			//PL=>$row[PL],
+			//FR=>$row[FR]
+		//	);
 			
 			//echo $row[PL]."</BR>";
 			//echo $row[FR];
-			echo json_encode($row[PL]);
+			echo $row[PL];
 	}
 
 

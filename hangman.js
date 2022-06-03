@@ -4,6 +4,7 @@ var xhr = new XMLHttpRequest ();
 xhr.open("POST", "getword.php");
 xhr.onload = function() {
     var jsvar = this.response;
+	document.getElementById("translation").innerHTML = (jsvar);
 }
 xhr.send();
 
@@ -16,12 +17,6 @@ bar.send();
 
 var password = "Le Coffre";
 var translation = "Skrzynia";
-
-var row = new XMLHttpRequest();
-row.open("Get","test.php", true);
-row.send();
-
-console.log(row);
 
 var mistake_count = 0;
 
