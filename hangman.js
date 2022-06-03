@@ -1,8 +1,8 @@
 
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
 
-var password = "skrzynia";
-var translation = "le coffre";
+var password = "polska górom";
+var translation = "le";
 
 var mistake_count = 0;
 
@@ -12,10 +12,48 @@ translation = translation.toUpperCase();
 var password_length = password.length;
 var hiddenpassword = "";
 
-for (i=0; i<password_length; i++)
+var number_of_keys = 0;
+
+var letters = new Array(number_of_keys);
+
+function get_gamemode()
 {
-    if(password.charAt(i) == " ") hiddenpassword += " ";
-    else hiddenpassword += "-";
+    var gamemode_select = document.getElementById('gamemode');
+    var gamemode_value = gamemode_select.options[gamemode_select.selectedIndex].value;
+
+    if (gamemode_value == "true")
+    {
+        var bufor = "";
+        bufor = password;
+        password = translation;
+        translation = bufor;
+        
+        document.getElementById("keyboard").className="keyboard french_keyboard";
+        french_keyboard();
+
+        number_of_keys = french_letters.length;
+        letters = french_letters;
+    }
+    else
+    {
+        document.getElementById("keyboard").className="keyboard polish_keyboard";
+        polish_keyboard();
+
+        number_of_keys = polish_letters.length;
+        letters = polish_letters;
+    }
+
+}
+
+function hide_password()
+{
+    for (i=0; i<password.length; i++)
+    {
+        if(password.charAt(i) == " ") hiddenpassword += " ";
+        else hiddenpassword += "-";
+    }
+
+    show_words();
 }
 
 function show_words()
@@ -24,7 +62,127 @@ function show_words()
     document.getElementById("password").innerText = hiddenpassword;
 }
 
-window.onload = start;
+function french_keyboard()
+{
+    var div_content ="";
+
+
+    for (i=0; i<=41; i++)
+    {
+        var element = "letter" + i;
+
+        div_content += '<div class="keyboard_button" onclick="check('+i+')" id="'+element+'">'+ french_letters[i] +'</div>';
+
+        if (i==13 || i==27) div_content += '<div style="clear:both;"></div>';
+        if (i==13) div_content += '<div class="keyboard_spacing_secound_row"></div>';
+        if (i==27) div_content += '<div class="keyboard_spacing_third_row"></div>';
+    }
+
+    document.getElementById("keyboard").innerHTML = div_content;
+
+    var first_image = '<div><img src="Gallows/s0.png"></div>';
+    document.getElementById("gallows_image").innerHTML = first_image;
+
+    hide_password();
+}
+
+function polish_keyboard()
+{
+
+    var div_content ="";
+
+
+    for (i=0; i<=34; i++)
+    {
+        var element = "letter" + i;
+
+        div_content += '<div class="keyboard_button" onclick="check('+i+')" id="'+element+'">'+ polish_letters[i] +'</div>';
+
+        if (i==11 || i==23) div_content += '<div style="clear:both;"></div>';
+        if (i==11) div_content += '<div class="keyboard_spacing_secound_row"></div>';
+        if (i==23) div_content += '<div class="keyboard_spacing_third_row"></div>';
+    }
+
+    document.getElementById("keyboard").innerHTML = div_content;
+
+    var first_image = '<div><img src="Gallows/s0.png"></div>';
+    document.getElementById("gallows_image").innerHTML = first_image;
+
+    hide_password();
+}
+
+function start()
+{
+    get_gamemode();
+    document.getElementById("start_button").setAttribute("onclick",";")
+}
+
+String.prototype.setCharacter = function(position, character)
+{
+    if (position > this.length - 1) return this.toString();
+    else 
+    {
+        return this.substr(0, position) + character + this.substr(position+1);
+    }
+}
+
+function check(nr)
+{
+    var guessed = false;
+
+    for(i=0; i<password.length; i++)
+    {
+        if (password.charAt(i) == letters[nr])
+        {
+            hiddenpassword = hiddenpassword.setCharacter(i,letters[nr])
+            guessed = true;
+        }
+    }
+
+    if (guessed == true)
+    {
+        var element = "letter" + nr;
+        document.getElementById(element).className="keyboard_button guessed";
+        document.getElementById(element).setAttribute("onclick",";");
+
+        show_words();
+    }
+    else
+    {
+        var element = "letter" + nr;
+        document.getElementById(element).className="keyboard_button not_guessed";
+
+        mistake_count++;
+
+        var image_number = "Gallows/s" + mistake_count + ".png";
+        document.getElementById("gallows_image").innerHTML = '<img src="'+image_number+'" alt="" />';
+        document.getElementById(element).setAttribute("onclick",";");
+    }
+    
+    //Win
+    if (password == hiddenpassword)
+    {
+        document.getElementById("board").innerHTML = "Tak jest! Podano prawidłowe hasło: "+password+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
+        for(i=0; i<=number_of_keys; i++)
+        {
+            var element = "letter" + i;
+            document.getElementById(element).className="keyboard_button win";
+            document.getElementById(element).setAttribute("onclick",";");
+        }
+    }
+
+    //Loss
+    if (mistake_count>=9)
+    {
+	    document.getElementById("board").innerHTML  = "Przegrana! Prawidłowe hasło: "+password+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
+        for(i=0; i<=number_of_keys; i++)
+        {
+            var element = "letter" + i;
+            document.getElementById(element).className="keyboard_button loss";
+            document.getElementById(element).setAttribute("onclick",";");
+        }
+    }
+}
 
 var polish_letters = new Array(35);
 
@@ -108,119 +266,3 @@ french_letters[38] = "Û";
 french_letters[39] = "Ù";
 french_letters[40] = "Ü";
 french_letters[41] = "Œ";
-
-function french_keyboard()
-{
-    var div_content ="";
-
-
-    for (i=0; i<=41; i++)
-    {
-        var element = "letter" + i;
-
-        div_content += '<div class="keyboard_button" onclick="check('+i+')" id="'+element+'">'+ french_letters[i] +'</div>';
-
-        if (i==13 || i==27) div_content += '<div style="clear:both;"></div>';
-        if (i==13) div_content += '<div class="keyboard_spacing_secound_row"></div>';
-        if (i==27) div_content += '<div class="keyboard_spacing_third_row"></div>';
-    }
-
-    document.getElementById("keyboard").innerHTML = div_content;
-
-    show_words();
-}
-
-function polish_keyboard()
-{
-
-    var div_content ="";
-
-
-    for (i=0; i<=34; i++)
-    {
-        var element = "letter" + i;
-
-        div_content += '<div class="keyboard_button" onclick="check('+i+')" id="'+element+'">'+ polish_letters[i] +'</div>';
-
-        if (i==11 || i==23) div_content += '<div style="clear:both;"></div>';
-        if (i==11) div_content += '<div class="keyboard_spacing_secound_row"></div>';
-        if (i==23) div_content += '<div class="keyboard_spacing_third_row"></div>';
-    }
-
-    document.getElementById("keyboard").innerHTML = div_content;
-
-    show_words();
-}
-
-function start()
-{
-    polish_keyboard();
-}
-
-String.prototype.setCharacter = function(position, character)
-{
-    if (position > this.length - 1) return this.toString();
-    else 
-    {
-        return this.substr(0, position) + character + this.substr(position+1);
-    }
-}
-
-function check(nr)
-{
-    var guessed = false;
-
-    for(i=0; i<password_length; i++)
-    {
-        if (password.charAt(i) == polish_letters[nr])
-        {
-            hiddenpassword = hiddenpassword.setCharacter(i,polish_letters[nr])
-            guessed = true;
-        }
-    }
-
-    if (guessed == true)
-    {
-        var element = "letter" + nr;
-        document.getElementById(element).className="keyboard_button guessed";
-        document.getElementById(element).setAttribute("onclick",";");
-
-        show_words();
-    }
-    else
-    {
-        var element = "letter" + nr;
-        document.getElementById(element).className="keyboard_button not_guessed";
-
-        mistake_count++;
-
-        var image_number = "Gallows/s" + mistake_count + ".png";
-        document.getElementById("gallows_image").innerHTML = '<img src="'+image_number+'" alt="" />';
-        document.getElementById(element).setAttribute("onclick",";");
-    }
-    
-    //Win
-    if (password == hiddenpassword)
-    {
-        document.getElementById("board").innerHTML = "Tak jest! Podano prawidłowe hasło: "+password+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
-        for(i=0; i<=34; i++)
-        {
-            var element = "letter" + i;
-            document.getElementById(element).className="keyboard_button win";
-            document.getElementById(element).setAttribute("onclick",";");
-        }
-    }
-
-    //Loss
-    if (mistake_count>=9)
-    {
-	    document.getElementById("board").innerHTML  = "Przegrana! Prawidłowe hasło: "+password+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
-        for(i=0; i<=34; i++)
-        {
-            var element = "letter" + i;
-            document.getElementById(element).className="keyboard_button loss";
-            document.getElementById(element).setAttribute("onclick",";");
-        }
-    }
-}
-
