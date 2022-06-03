@@ -17,15 +17,15 @@ bar.onload = function() {
 }
 bar.send();
 
+xhr=xhr.toString()
+String(xhr)
+
+bar=bar.toString()
+String(bar)
+
+
 var password = "Le Coffre";
 var translation = "Skrzynia";
-
-function podmienianie()
-{
-    password = xhr
-    translation = bar
-}
-
 
 var mistake_count = 0;
 
