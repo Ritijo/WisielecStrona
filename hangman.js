@@ -1,7 +1,14 @@
 
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
-var password = "skrzynia";
-var translation = "le coffre";
+var xhr = new XMLHttpRequest ();
+xhr.open("POST", "getworld.php");
+xhr.onload = function() {
+    var jsvar = this.response;
+    document.getElementById("translation").innerHTML = (jsvar);
+}
+xhr.send();
+var password = jsvar;
+var translation = xhr;
 
 var mistake_count = 0;
 
