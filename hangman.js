@@ -114,7 +114,7 @@ function polish_keyboard()
 function start()
 {
     get_gamemode();
-    document.getElementById("start_button").setAttribute("onclick",";")
+    document.getElementById("start_button").setAttribute("onclick",";");
 }
 
 String.prototype.setCharacter = function(position, character)
