@@ -25,6 +25,13 @@ String(bar)
 var password = "Le Coffre";
 var translation = "Skrzynia";
 
+function pdmiana()
+{
+    password = xhr
+
+    translation = bar
+}
+
 var mistake_count = 0;
 
 password = password.toUpperCase();
