@@ -1,5 +1,6 @@
 
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
+
 var password = "skrzynia";
 var translation = "le coffre";
 
