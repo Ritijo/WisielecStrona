@@ -17,8 +17,14 @@ bar.onload = function() {
 }
 bar.send();
 
-var password = xhr;
-var translation = bar;
+var password = "Le Coffre";
+var translation = "Skrzynia";
+
+function podmienianie()
+{
+    password = xhr
+    translation = bar
+}
 
 
 var mistake_count = 0;
@@ -33,7 +39,6 @@ for (i=0; i<password_length; i++)
 {
     if(password.charAt(i) == " ") hiddenpassword += " ";
     else hiddenpassword += "-";
-    console.log(hiddenpassword)
 }
 
 function show_words()
