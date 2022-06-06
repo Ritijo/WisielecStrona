@@ -1,8 +1,81 @@
+<?php
 
+	require_once "connection.php";
+	$connect = @new mysqli($host, $user, $pass, $name);
+	
+	if($connect->connect_error)
+	{
+		die("Connection Failed:" . $connection->connect_error);
+	}
+
+	$difficulty = 3;
+	$nick  = 'gracz';
+	$PL = 'b';
+	$FR = 'a';
+	$mode = 'PL';
+	
+	if($mode == 'PL')
+	{
+		$get_player_score_sql = "SELECT PL, FR FROM words, Scores, players
+		WHERE LEVEL = '$difficulty' 
+		and Scores.PL_CORRECT = '0'
+		and players.name = '$nick'";
+	}
+	if($mode == 'FR')
+	{
+		$get_player_score_sql = "SELECT PL, FR FROM words, Scores, players 
+		WHERE LEVEL = '$difficulty' 
+		and Scores.FR_CORRECT = '0'
+		and players.name = '$nick'";
+	}	
+	
+
+        
+
+	$res = mysqli_query($connect, $get_player_score_sql,$get_pleyers);
+	 
+	 
+	if(mysqli_num_rows($res)>0)
+	{
+		//echo "Twoj wynik: </br>";
+		$row=mysqli_fetch_array($res);
+		
+			//$array=array(
+			//PL=>$row[PL],
+			//FR=>$row[FR]
+		//	);
+			
+			//echo $row[PL]."</BR>";
+			 $row[FR];
+			 $row[PL];
+             $row[SCORE_TOTAL];
+
+
+	}
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html> 
+<head>
+
+    <title>Wisielec</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script >
+
+    
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
 
-var password = "";
-var translation = "";
+var wynik = "<?php echo"$row[SCORE_TOTAL] "?>";
+var password = "<?php echo"$row[FR] "?>";
+var translation = "<?php echo"$row[PL] "?>";
 var mistake_count = 0;
 
 password = password.toUpperCase();
@@ -223,4 +296,78 @@ function check(nr)
         }
     }
 }
+            function wynik() 
+            {
+                document.getElementById("score").innerText = wynik;
+                alert("dupa");
+            }
 
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        
+        <h1>Zagraj w wisielca i przetestuj swoją wiedzę!</h1>
+
+        <p>Pytania nagrania wywiady jak to jest że kiedyś nie miałeś
+            Układy zasady porady to dlaczego mnie kiedyś sprzedałeś
+            Wiem że świat ma wady i wszystko byśmy zapomnieli
+            Więc ubieramy się u Prady budzimy w egipskiej pościeli</p>
+
+        <div id="mode_choice">
+            <p>Wybierz tryb: 
+                <select name="gamemode" id="gamemode">
+                    <option value="">Z francuskiego na polski</option>
+                    <option value="">Z polskiego na francuski</option>
+                </select>
+            </p>
+            
+        </div>
+
+
+        <div id="difficulty_mode">
+            <p>Wybierz poziom trudności
+                <select name="difficulty" id="difficulty">
+                    <option value="">Łatwy</option>
+                    <option value="">Średni</option>
+                    <option value="">Trudny</option>
+                </select>
+            </p>
+        </div>
+
+
+        <input type="button" value="Rozpocznij grę" id="start_button">
+
+
+        <div id="score_preview">
+            <div style="float: left;">Twoj obecny wynik to:</div>
+            <div id="score">
+
+           </div>
+        </div>
+        <div style="clear:both ;"></div>
+
+
+        <div id="gallows_image">
+            <img src="Gallows/s0.png" alt="no image">
+        </div>
+        <div id="board">
+            <p id="translation"></p>
+            <p id="password"></p>
+        </div>
+        <div style="clear:both ;"></div>
+
+
+        <div id="bottom_panel"><div id="keyboard"></div></div>
+        
+        
+    </div>
+
+</body>
+</html>
