@@ -172,7 +172,7 @@ function check(nr)
     }
 
     //Loss
-    if (mistake_count>=9)
+    if (mistake_count>=5)
     {
 	    document.getElementById("board").innerHTML  = "Przegrana! Prawidłowe hasło: "+password+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
         for(i=0; i<=number_of_keys; i++)
