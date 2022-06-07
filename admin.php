@@ -11,9 +11,8 @@
 	$PL = $_POST['PL'];
 	$FR = $_POST['FR'];
 	$LEVEL = $_POST['dif'];
-	$CATEGORY = $_POST['category'];
-	$sql = "INSERT INTO words (PL, FR, LEVEL, CATEGORY)
-	VALUES ('$PL', '$FR', '$LEVEL', '$CATEGORY')";
+	$sql = "INSERT INTO words (PL, FR, LEVEL)
+	VALUES ('$PL', '$FR', '$LEVEL')";
 	mysqli_query($connect, $sql);
 	echo "udalo sie";
 ?>

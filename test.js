@@ -25,7 +25,7 @@ function loadJSON(url, name){
         }
     }
 
-    xhr.open("GET", test.php, true);
+    xhr.open("GET", url, true);
     xhr.send();
 }
 
@@ -39,4 +39,24 @@ $(document).ready(function(){
 
 function success(){ 
     $("body").append(foo[0].option + "<br>" + bar[0].fname + " " + bar[0].lname);  
+}
+
+
+function getSource(callback) {
+    var response, xmlhttp;
+
+    xmlhttp = new XMLHttpRequest;
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState === 4 && xmlhttp.status === 200 && callback) callback(xmlhttp.responseText);
+    }
+
+    xmlhttp.open("GET", "http://www.google.com", true);
+    xmlhttp.send();
+}
+
+function test()
+{   var a;
+    setTimeout(function () { a = 1; }, 100000000000000000); //high number for example only
+    return a; // undefined, the function has completed, but the setTimeout has not run yet
+    a = 1; // it's like doing this after return, has no effect
 }

@@ -1,5 +1,6 @@
 <?php
 
 $tekst = "eh";
-echo json_decode($tekst);
+echo json_encode($tekst);
+
 ?>

@@ -29,10 +29,12 @@
 		and players.name = '$nick'";
 	}	
 	
-
+    $id=1;
+    $get_pleyers ="SELECT SUM(PL_CORRECT + FR_CORRECT) as SCORE_TOTAL FROM players, Scores
+    WHERE players.ID = Scores.ID_PLAYER AND players.ID='$id';";
         
 
-	$res = mysqli_query($connect, $get_player_score_sql,$get_pleyers);
+	$res = mysqli_query($connect, $get_player_score_sql);
 	 
 	 
 	if(mysqli_num_rows($res)>0)
@@ -46,12 +48,30 @@
 		//	);
 			
 			//echo $row[PL]."</BR>";
-			 $row[FR];
-			 $row[PL];
-             $row[SCORE_TOTAL];
+			  $row[FR];
+			  $row[PL];
 
 
 	}
+	/*
+	$eee = mysqli_query($connect, $get_pleyers);
+	 
+	 
+	if(mysqli_num_rows($eee)>0)
+	{
+		//echo "Twoj wynik: </br>";
+		$row=mysqli_fetch_array($eee);
+		
+			//$array=array(
+			//PL=>$row[PL],
+			//FR=>$row[FR]
+		//	);
+			
+			//echo $row[PL]."</BR>";
+			 echo $row[SCORE_TOTAL];
+
+
+	}*/
 
 ?>
 
@@ -73,9 +93,10 @@
     
 //do zmiennych poniżej powinny zostać wrzucone słowa z bazy
 
-var wynik = "<?php echo"$row[SCORE_TOTAL] "?>";
+
 var password = "<?php echo"$row[FR] "?>";
 var translation = "<?php echo"$row[PL] "?>";
+var wynik = "<?php echo"$row[SCORE_TOTAL] "?>";
 var mistake_count = 0;
 
 password = password.toUpperCase();
@@ -299,7 +320,6 @@ function check(nr)
             function wynik() 
             {
                 document.getElementById("score").innerText = wynik;
-                alert("dupa");
             }
 
 
@@ -348,8 +368,39 @@ function check(nr)
         <div id="score_preview">
             <div style="float: left;">Twoj obecny wynik to:</div>
             <div id="score">
+			   <?php 
+			require_once "connection.php";
+			$connect = @new mysqli($host, $user, $pass, $name);
+	
+			if($connect->connect_error)
+			{
+				die("Connection Failed:" . $connection->connect_error);
+			}
+			
+			    $id=1;
+				
+				$get_pleyers ="SELECT SUM(PL_CORRECT + FR_CORRECT) as SCORE_TOTAL FROM players, Scores
+				WHERE players.ID = Scores.ID_PLAYER AND players.ID='$id';";
+				$eee = mysqli_query($connect, $get_pleyers);
+	 
+	 
+			if(mysqli_num_rows($eee)>0)
+			{
+			//echo "Twoj wynik: </br>";
+			$row=mysqli_fetch_array($eee);
+		
+				//$array=array(
+				//PL=>$row[PL],
+				//FR=>$row[FR]
+			//	);
+			
+				//echo $row[PL]."</BR>";
+				echo $row[SCORE_TOTAL];
+			}
 
+			?>
            </div>
+		   
         </div>
         <div style="clear:both ;"></div>
 
